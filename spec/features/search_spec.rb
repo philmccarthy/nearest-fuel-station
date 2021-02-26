@@ -11,15 +11,18 @@ RSpec.describe 'search page', type: :feature do
       expect(current_path).to eq(search_path)
       expect(page).to have_content('Nearest Charging Station')
 
-      expect(page).to have_content('Station Name: skfjh')
-      expect(page).to have_content('Address: asdasd')
-      expect(page).to have_content('Fuel Type: air')
+      expect(page).to have_content('Station Name: Seventeenth Street Plaza')
+      expect(page).to have_content('Address: 1225 17th St., Denver, CO 80202')
+      expect(page).to have_content('Fuel Type: ELEC')
+      expect(page).to have_content('Access Times: MO: Not Specified; TU: Not Specified; WE: Not Specified; TH: Not Specified; FR: Not Specified; SA: Not Specified; SU: Not Specified')
       expect(page).to have_content('Distance Away: 0.1 miles')
-      expect(page).to have_content('Travel Time: 1 min')
 
       expect(page).to have_css('.directions')
-      within('.direction') do
-        expect(page).to have_content('Turn left onto Lawrence St Destination will be on the left')
+      within('.directions') do
+        expect(page).to have_content('Travel Time: 1 min')
+        expect(page).to have_content("Start out going southeast on 17th St toward Larimer St/CO-33.")
+        expect(page).to have_content("Turn left onto Lawrence St/CO-33.")
+        expect(page).to have_content("1737 LAWRENCE ST is on the left.")
       end
     end
   end
