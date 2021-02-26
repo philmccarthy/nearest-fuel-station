@@ -1,3 +1,23 @@
 <h1>Nearest Charging Station</h1>
+<section class='nearest-station'>
+<p>Station Name: <%= @nearest_station.name %></p>
+<p>Address: <%= "#{@nearest_station.street}, 
+                 #{@nearest_station.city}, 
+                 #{@nearest_station.state} 
+                 #{@nearest_station.zip}" 
+            %></p>
+<p>Fuel Type: <%= @nearest_station.fuel_type %></p>
+<p>Access Times: <%= @nearest_station.access_times %></p>
+<p>Distance Away: <%= @nearest_station.distance_away.round(1) %> miles</p>
 
-
+  <section class='directions'>
+  <p>Travel Time: <%= @route.travel_time.round(0) %> min</p>
+  <p>Directions: 
+    <ol>
+      <% @route.get_directions.each do |direction| %>
+        <li><%= direction %></li>
+      <% end %>
+    </ol>
+  </p>
+  </section>
+</section>
