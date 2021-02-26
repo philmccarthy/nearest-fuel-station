@@ -2,7 +2,6 @@ class FuelStation
   attr_reader :name, :street, :city, :state, :zip, :fuel_type,
               :access_times, :distance_away, :lat_long
   def initialize(data)
-    @search_location = data
     @name = data[:station_name]
     @street = data[:street_address]
     @city = data[:city]

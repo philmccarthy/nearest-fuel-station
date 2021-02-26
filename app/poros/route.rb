@@ -6,8 +6,10 @@ class Route
   end
 
   def get_directions
-    @legs[0][:maneuvers].map do |maneuver|
-      maneuver[:narrative]
+    @legs.flat_map do |leg|
+      leg[:maneuvers].map do |man|
+        man[:narrative]
+      end
     end
   end
 end
