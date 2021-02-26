@@ -17,6 +17,8 @@ RSpec.describe FuelStationService do
       expect(search).to have_key :distance
       expect(search).to have_key :latitude
       expect(search).to have_key :longitude
+
+      # Ran out of time during refactor, should also check for data types
     end
   end
 end

@@ -5,7 +5,7 @@ RSpec.describe SearchFacade do
     it '::get_nearest_station' do
       params = {location: '1331 17th St LL100, Denver, CO 80202'}
       station = SearchFacade.get_nearest_station(params)
-      
+
       expect(station).to be_a FuelStation
       expect(station).to have_attributes(
         access_times: "MO: Not Specified; TU: Not Specified; WE: Not Specified; TH: Not Specified; FR: Not Specified; SA: Not Specified; SU: Not Specified",
@@ -18,6 +18,10 @@ RSpec.describe SearchFacade do
         street: "1225 17th St.",
         zip: "80202"
       )
+    end
+
+    it '::get_directions' do
+      # Ran out of time during refactor! Test that a Route PORO is created and check attributes
     end
   end
 end
