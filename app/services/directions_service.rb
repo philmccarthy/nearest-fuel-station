@@ -12,9 +12,7 @@ class DirectionsService
     private
 
     def conn
-      Faraday.new("http://www.mapquestapi.com/") do |conn|
-        
-      end
+      Faraday.new("http://www.mapquestapi.com/")
     end
 
     def parse(response)
